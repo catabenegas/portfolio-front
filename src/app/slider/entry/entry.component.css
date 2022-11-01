@@ -1,0 +1,31 @@
+.sqr-logo
+{
+    object-fit: scale-down;
+    width: 70px;
+    height: 70px;
+    background-color: gray;
+    float: right;
+}
+
+div.entry
+{
+    padding-left: 20px;
+    margin-top: 50px;
+    margin-left: 20px;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    border-bottom: 2px dotted rgba(128, 122, 123, 1); 
+}
+
+.title 
+{
+    margin-left: 20px;
+}
+
+.error
+{
+    color: red;
+}

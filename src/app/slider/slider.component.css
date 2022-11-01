@@ -1,0 +1,115 @@
+/* Contenedores */
+div {
+    margin: auto;
+    position: relative;
+}
+
+div.slider {
+    background-color: var(--first-color-light);
+    width: auto;
+    height: 35rem;
+}
+
+/* Barra de navegacion */
+nav {
+    width: 100%;
+    position: absolute;
+    margin: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: -1%;
+    margin-left: -1%;
+    z-index: 5;
+    -webkit-filter: brightness(100%);
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+nav ul li {
+    display: flex;
+    flex-grow: 1;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+}
+
+nav a {
+    color: var(--second-color);
+    background: var(--first-color-light); 
+    font-weight: bold;
+    text-decoration: none;
+    line-height: 1.8;
+    flex-grow: 1;
+    text-align: center;
+    border-top: 5px solid var(--second-color);
+    border-right: 1px solid var(--second-color);
+    flex-wrap: wrap;
+    position: relative;
+}
+
+nav li:last-child a {
+    border-right: 0;
+}
+
+nav a:hover {
+    -webkit-filter: brightness(90%);
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+nav a:active {
+    border-top-color: var(--third-color);
+    background: var(--third-color);
+}
+
+
+/* Sliders */
+ul, li {
+    padding: 0;
+    margin: 0;
+    list-style: none inside;
+    box-sizing: border-box;
+}
+
+ul.slider {
+    position: relative;
+}
+
+ul.slider li {
+    opacity: 0; 
+    transition: opacity .5s;
+    position: absolute;
+    z-index: 0;
+}
+
+ul.slider li:target {
+    opacity: 1; 
+    z-index: 4;
+}
+
+/* Formato interno del slider */
+.title
+{
+    width: 175px;
+    padding-right: 10px;
+    margin: 100px 0px auto 50px;
+    color: var(--detail-color);
+    font-size: 25px;
+    border-right: 1px solid var(--detail-color);
+}
+
+.c-content
+{
+    margin: auto;
+    width: 54rem;
+    height: 290px;
+    margin-top: 80px;
+    margin-left: 20px;
+    overflow-y: scroll;
+}

@@ -1,0 +1,34 @@
+<div *ngFor="let e of expList">
+    <div class="entry" *ngIf="!editando || idActual!=e.id">
+        <div class="column">
+            <img src="" class="sqr-logo">
+        </div>
+
+        <div class="column title">
+            <h4><b>{{e.title}}</b></h4>
+            <p style="white-space: pre-line">
+                {{e.content}}
+            </p>
+            <button class="btn btn-primary" on-click="activarEdicion(e.id)">Editar</button>
+            <button class="btn btn-primary" on-click="eliminar(e.id)">Eliminar</button>
+        </div>
+    </div>
+
+    <div class="entry" *ngIf="editando && idActual==e.id">
+        <div class="column">
+            <img src="" class="sqr-logo">
+        </div>
+
+        <div class="column title" *ngIf="editando">
+            <input class="form-control" type="text" name="title" id="title"
+            [(ngModel)]="exp.title">
+            <textarea class="form-control" type="text" name="exp" id="exp"
+            [(ngModel)]="exp.content" rows="4" cols="40"></textarea>
+            <p class="error" *ngIf="failActualizado">Error al guardar</p>
+            <button class="btn btn-primary" on-click="editar(e.id)">Confirmar</button>
+            <button class="btn btn-primary" on-click="cancelarEdicion()">Cancelar</button>
+        </div>
+    </div>
+</div>
+<p class="error" *ngIf="failCreando">Error al crear un elemento nuevo</p>
+<button class="btn btn-primary" on-click="crearNuevo()">Nuevo</button>

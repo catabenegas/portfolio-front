@@ -1,1 +1,41 @@
-/* You can add global styles to this file, and also import other style files */
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300&display=swap');
+
+:root {
+
+    /* Colores */
+    --n-frst-color: 335; /* Rosa */
+    --n-scnd-color: 212; /* Azul */
+    --n-thrd-color: 285; /* Violeta */
+
+    --first-color: hsl(var(--n-frst-color), 100%, 88%);;
+    --second-color: hsl(var(--n-scnd-color), 77%, 38%);
+    --third-color: hsl(var(--n-thrd-color), 53%, 63%);
+    
+    --first-color-dark: hsl(var(--n-frst-color), 90%, 68%);
+    --first-color-light: hsl(var(--n-frst-color), 100%, 95%);
+    
+    --detail-color: hsl(342, 5%, 38%);
+
+    /* Fuente */
+    --font-base: 'Lato', sans-serif;
+} 
+
+*
+{
+    padding: 0;
+    margin: 0;
+}
+
+html 
+{
+    max-width: 100%;
+    overflow-x: hidden;
+}
+  
+
+body
+{
+    font-family: var(--font-base);
+    background-color: var(--first-color);
+}

@@ -1,0 +1,21 @@
+<button class="btn btn-outline-light" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Iniciar sesión</button>
+
+<div id="id01" class="modal">
+
+    <form class="modal-content animate" action="/action_page.php">
+        <div class="titlecontainer">
+            <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+            <h2>Inicio de sesión</h2>
+         </div>
+
+        <div class="container">
+            <label><b>Usuario</b></label>
+            <input type="text" placeholder="Ingresar usuario" name="uname" required>
+
+            <label><b>Contraseña</b></label>
+            <input type="password" placeholder="Ingresar contraseña" name="psw" required>
+
+            <button class="btn btn-outline-dark" type="submit">Login</button>
+        </div>
+    </form>
+</div>
