@@ -9,7 +9,7 @@ const cabecera = {headers: new HttpHeaders({'Content-TYpe': 'application/json'})
   providedIn: 'root'
 })
 export class SkillService {
-  skillURL = 'http://localhost:8080/api/skill/'
+  skillURL = 'https://portfolio-back3233.herokuapp.com/api/skill/'
 
   constructor(private httpClient: HttpClient) { }
 

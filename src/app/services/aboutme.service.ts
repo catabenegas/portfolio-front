@@ -9,7 +9,7 @@ const cabecera = {headers: new HttpHeaders({'Content-TYpe': 'application/json'})
   providedIn: 'root'
 })
 export class AboutmeService {
-  AboutMeURL = 'http://localhost:8080/api/aboutme/';
+  AboutMeURL = 'https://portfolio-back3233.herokuapp.com/api/aboutme/';
 
   constructor(private httpClient: HttpClient) { }
 
