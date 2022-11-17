@@ -46,13 +46,14 @@ export class EduComponent implements OnInit {
 
   cancelarEdicion(): void {
     this.editando = false;
+    this.failCreando = false;
+    this.failActualizado = false;
     this.idActual = 0;
     this.cargarTodos();
   }
 
   editar(id: number): void {
     this.eduService.editar(this.edu, id).subscribe( data => {
-      this.failActualizado = false;
       this.cancelarEdicion();
     },
     (err: any) => {

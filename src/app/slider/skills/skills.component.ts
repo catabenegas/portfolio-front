@@ -72,13 +72,14 @@ export class SkillsComponent implements OnInit {
 
   cancelarEdicion(): void {
     this.editando = false;
+    this.failCreando = false;
+    this.failActualizado = false;
     this.idActual = 0;
     this.cargarTodos();
   }
 
   editar(id: number): void {
     this.skillService.editar(this.skill, id).subscribe( data => {
-      this.failActualizado = false;
       this.cancelarEdicion(); 
     },
     (err: any) => {
