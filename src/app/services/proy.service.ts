@@ -9,7 +9,7 @@ const cabecera = {headers: new HttpHeaders({'Content-Type': 'application/json'})
   providedIn: 'root'
 })
 export class ProyService {
-  proyURL = 'http://portfolio-back3233.herokuapp.com/api/proy/'
+  proyURL = 'https://portfolio-back3233.herokuapp.com/api/proy/'
 
   constructor(private httpClient: HttpClient) { }
 

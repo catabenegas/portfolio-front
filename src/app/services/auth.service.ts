@@ -7,7 +7,7 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 })
 
 export class AuthService {
-  api = 'http://portfolio-back3233.herokuapp.com/api';
+  api = 'https://portfolio-back3233.herokuapp.com/api';
   token = '';
 
   constructor(private http: HttpClient, private tokenService: TokenService) { }
