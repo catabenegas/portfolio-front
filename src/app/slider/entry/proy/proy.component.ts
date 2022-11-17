@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Proyecto } from 'src/app/models/proyecto';
+import { AuthService } from 'src/app/services/auth.service';
 import { ProyService } from 'src/app/services/proy.service';
 
 @Component({
@@ -15,7 +16,7 @@ export class ProyComponent implements OnInit {
   failCreando = false;
   failActualizado = false;
 
-  constructor(private proyService: ProyService) { }
+  constructor(private proyService: ProyService, private authService: AuthService) { }
 
   ngOnInit() {
     this.cargarTodos();
@@ -88,5 +89,9 @@ export class ProyComponent implements OnInit {
         this.cargarTodos();
       });
     }
+  }
+
+  isLogged() {
+    return this.authService.isLogged
   }
 }

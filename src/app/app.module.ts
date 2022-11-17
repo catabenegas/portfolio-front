@@ -15,6 +15,7 @@ import { AboutmeComponent } from './slider/aboutme/aboutme.component';
 import { ExpComponent } from './slider/entry/exp/exp.component';
 import { EduComponent } from './slider/entry/edu/edu.component';
 import { ProyComponent } from './slider/entry/proy/proy.component';
+import { interceptorProvider } from './services/token-interceptor.service';
 
 
 @NgModule({
@@ -36,7 +37,7 @@ import { ProyComponent } from './slider/entry/proy/proy.component';
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [interceptorProvider],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

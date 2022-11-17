@@ -3,13 +3,13 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Experiencia } from '../models/experiencia';
 
-const cabecera = {headers: new HttpHeaders({'Content-TYpe': 'application/json'})};
+const cabecera = {headers: new HttpHeaders({'Content-Type': 'application/json'})}; 
 
 @Injectable({ 
   providedIn: 'root'
 })
 export class ExpService {
-  expURL = 'https://portfolio-back3233.herokuapp.com/api/exp/'
+  expURL = 'http://portfolio-back3233.herokuapp.com/api/exp/'
 
   constructor(private httpClient: HttpClient) { }
 

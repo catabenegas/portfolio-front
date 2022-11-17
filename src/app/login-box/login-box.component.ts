@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { AuthService } from '../auth.service';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-login-box',
@@ -9,15 +9,38 @@ import { AuthService } from '../auth.service';
 })
 export class LoginBoxComponent implements OnInit {
 
-  email = '';
+  username = '';
   password = '';
+  failed : boolean = false;
+  errorMsg = '';
 
   constructor(private authService: AuthService) {}
 
   Login() {
-    // El servicio authService.login ya redirecciona
-    // en caso de inicio de sesión positivo.
-//    this.authService.login(this.email, this.password)
+    this.username = (<HTMLInputElement>document.getElementById('uname')).value;
+    this.password = (<HTMLInputElement>document.getElementById('pwd')).value;
+    this.authService.tryToLog(this.username, this.password).subscribe((data : any) => {
+      this.authService.login(data.token);
+      var cajaLogin = document.getElementById('cajaLogin');
+      if (cajaLogin != null)
+      {
+        cajaLogin.style.display='none';
+      }
+      this.failed = false;
+    },
+    (err : any) =>
+    {
+      this.errorMsg = err.error.message;
+      this.failed = true;
+    });
+  }
+
+  isLogged() {
+    return this.authService.isLogged
+  }
+
+  Logout() {
+    this.authService.logout()
   }
 
   ngOnInit() {}

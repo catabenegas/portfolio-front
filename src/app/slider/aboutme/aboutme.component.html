@@ -2,7 +2,7 @@
     <p style="white-space: pre-line">
         {{aboutme.content}}
     </p>
-    <button class="btn btn-primary" on-click="activarEdicion()">Editar</button>
+    <button class="btn btn-primary" on-click="activarEdicion()" *ngIf="isLogged()">Editar</button>
 </div>
 
 <div *ngIf="editando">

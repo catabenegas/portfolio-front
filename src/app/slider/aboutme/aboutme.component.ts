@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AboutmeService } from 'src/app/services/aboutme.service';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-aboutme',
@@ -11,8 +12,9 @@ export class AboutmeComponent implements OnInit {
   aboutme: any = {};
   editando = false;
   failActualizado = false;
+  originalText = '';
 
-  constructor(private aboutmeService: AboutmeService) { }
+  constructor(private aboutmeService: AboutmeService, private authService: AuthService) { }
 
   ngOnInit() {
     this.cargarAboutMe();
@@ -29,7 +31,7 @@ export class AboutmeComponent implements OnInit {
   }
 
   editar(): void {
-      this.aboutmeService.editar(this.aboutme, 1).subscribe( data => {
+    this.aboutmeService.editar(this.aboutme, 1).subscribe( data => {
       this.failActualizado = false;
       this.cancelarEdicion();
     },
@@ -41,8 +43,17 @@ export class AboutmeComponent implements OnInit {
 
   activarEdicion(): void {
     this.editando = true;
+    this.originalText = this.aboutme.content;
   }
   cancelarEdicion(): void {
     this.editando = false;
+    if (this.failActualizado) 
+    { 
+      this.aboutme.content = this.originalText;
+    }
+  }
+
+  isLogged() {
+    return this.authService.isLogged
   }
 }

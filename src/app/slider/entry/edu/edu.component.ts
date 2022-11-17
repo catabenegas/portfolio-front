@@ -1,6 +1,7 @@
 import { Educacion } from '../../../models/educacion';
 import { Component, OnInit } from '@angular/core';
 import { EduService } from 'src/app/services/edu.service';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-edu',
@@ -15,7 +16,7 @@ export class EduComponent implements OnInit {
   failCreando = false;
   failActualizado = false;
 
-  constructor(private eduService: EduService) { }
+  constructor(private eduService: EduService, private authService: AuthService) { }
 
   ngOnInit() {
     this.cargarTodos();
@@ -88,5 +89,9 @@ export class EduComponent implements OnInit {
         this.cargarTodos();
       });
     }
+  }
+
+  isLogged() {
+    return this.authService.isLogged
   }
 }

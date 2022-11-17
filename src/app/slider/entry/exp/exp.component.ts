@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Experiencia } from 'src/app/models/experiencia';
+import { AuthService } from 'src/app/services/auth.service';
 import { ExpService } from 'src/app/services/exp.service';
 
 @Component({
@@ -15,7 +16,7 @@ export class ExpComponent implements OnInit {
   failCreando = false;
   failActualizado = false;
 
-  constructor(private expService: ExpService) { }
+  constructor(private expService: ExpService, private authService: AuthService) { }
 
   ngOnInit() {
     this.cargarTodos();
@@ -52,7 +53,7 @@ export class ExpComponent implements OnInit {
   editar(id: number): void {
     this.expService.editar(this.exp, id).subscribe( data => {
       this.failActualizado = false;
-      this.cancelarEdicion();
+      this.cancelarEdicion(); 
     },
     (err: any) => {
       this.failActualizado = true;
@@ -88,5 +89,9 @@ export class ExpComponent implements OnInit {
         this.cargarTodos();
       });
     }
+  }
+
+  isLogged() {
+    return this.authService.isLogged
   }
 }

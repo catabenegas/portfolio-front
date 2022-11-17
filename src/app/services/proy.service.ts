@@ -3,13 +3,13 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Proyecto } from '../models/proyecto';
 
-const cabecera = {headers: new HttpHeaders({'Content-TYpe': 'application/json'})};
+const cabecera = {headers: new HttpHeaders({'Content-Type': 'application/json'})}; 
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProyService {
-  proyURL = 'https://portfolio-back3233.herokuapp.com/api/proy/'
+  proyURL = 'http://portfolio-back3233.herokuapp.com/api/proy/'
 
   constructor(private httpClient: HttpClient) { }
 

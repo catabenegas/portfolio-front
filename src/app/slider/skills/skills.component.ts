@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Skill } from 'src/app/models/skill';
+import { AuthService } from 'src/app/services/auth.service';
 import { SkillService } from 'src/app/services/skill.service';
 
 @Component({
@@ -15,7 +16,7 @@ export class SkillsComponent implements OnInit {
   failCreando = false;
   failActualizado = false;
 
-  constructor(private skillService: SkillService) { }
+  constructor(private skillService: SkillService, private authService: AuthService) { }
 
   ngOnInit() {
     this.cargarTodos();
@@ -113,6 +114,10 @@ export class SkillsComponent implements OnInit {
         this.cargarTodos();
       });
     }
+  }
+
+  isLogged() {
+    return this.authService.isLogged
   }
 }
 

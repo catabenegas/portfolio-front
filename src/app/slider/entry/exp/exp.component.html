@@ -9,8 +9,8 @@
             <p style="white-space: pre-line">
                 {{e.content}}
             </p>
-            <button class="btn btn-primary" on-click="activarEdicion(e.id)">Editar</button>
-            <button class="btn btn-primary" on-click="eliminar(e.id)">Eliminar</button>
+            <button class="btn btn-primary" on-click="activarEdicion(e.id)" *ngIf="isLogged()">Editar</button>
+            <button class="btn btn-primary" on-click="eliminar(e.id)" *ngIf="isLogged()">Eliminar</button>
         </div>
     </div>
 
@@ -31,4 +31,4 @@
     </div>
 </div>
 <p class="error" *ngIf="failCreando">Error al crear un elemento nuevo</p>
-<button class="btn btn-primary" on-click="crearNuevo()">Nuevo</button>
+<button class="btn btn-primary" on-click="crearNuevo()" *ngIf="isLogged()">Nuevo</button>

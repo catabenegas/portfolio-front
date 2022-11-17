@@ -3,13 +3,13 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { AboutMe } from '../models/about-me';
 
-const cabecera = {headers: new HttpHeaders({'Content-TYpe': 'application/json'})};
+const cabecera = {headers: new HttpHeaders({'Content-Type': 'application/json'})}; 
 
 @Injectable({
   providedIn: 'root'
 })
 export class AboutmeService {
-  AboutMeURL = 'https://portfolio-back3233.herokuapp.com/api/aboutme/';
+  AboutMeURL = 'http://portfolio-back3233.herokuapp.com/api/aboutme/';
 
   constructor(private httpClient: HttpClient) { }
 

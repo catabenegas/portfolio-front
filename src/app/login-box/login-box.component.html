@@ -1,21 +1,24 @@
-<button class="btn btn-outline-light" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Iniciar sesión</button>
+<button class="btn btn-outline-light" onclick="document.getElementById('cajaLogin').style.display='block'" style="width:auto;" *ngIf="!isLogged()">Iniciar sesión</button>
+<button class="btn btn-outline-light" on-click="Logout()" style="width:auto;" *ngIf="isLogged()">Cerrar sesión</button>
 
-<div id="id01" class="modal">
+<div id="cajaLogin" class="modal">
 
     <form class="modal-content animate" action="/action_page.php">
         <div class="titlecontainer">
-            <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+            <span onclick="document.getElementById('cajaLogin').style.display='none'" class="close" title="Close Modal">&times;</span>
             <h2>Inicio de sesión</h2>
          </div>
 
         <div class="container">
             <label><b>Usuario</b></label>
-            <input type="text" placeholder="Ingresar usuario" name="uname" required>
+            <input type="text" placeholder="Ingresar usuario" id="uname" name="uname" required>
 
             <label><b>Contraseña</b></label>
-            <input type="password" placeholder="Ingresar contraseña" name="psw" required>
+            <input type="password" placeholder="Ingresar contraseña" id="pwd" name="pwd" required>
 
-            <button class="btn btn-outline-dark" type="submit">Login</button>
+            <p class="error" *ngIf="this.failed">Error. {{this.errorMsg}}.</p>
+
+            <button class="btn btn-outline-dark" type="submit" on-click="Login()">Login</button>
         </div>
     </form>
 </div>

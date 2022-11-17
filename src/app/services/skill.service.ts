@@ -3,13 +3,13 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Skill } from '../models/skill';
 
-const cabecera = {headers: new HttpHeaders({'Content-TYpe': 'application/json'})};
+const cabecera = {headers: new HttpHeaders({'Content-Type': 'application/json'})};
 
 @Injectable({
   providedIn: 'root'
 })
 export class SkillService {
-  skillURL = 'https://portfolio-back3233.herokuapp.com/api/skill/'
+  skillURL = 'http://portfolio-back3233.herokuapp.com/api/skill/'
 
   constructor(private httpClient: HttpClient) { }
 

@@ -4,8 +4,8 @@
     <div class="container">
       <div class="skills" id="skill{{s.id}}">{{s.percentage * 100}}%</div>
     </div> 
-    <button class="btn btn-primary" on-click="activarEdicion(s.id)">Editar</button>
-    <button class="btn btn-primary" on-click="eliminar(s.id)">Eliminar</button>
+    <button class="btn btn-primary" on-click="activarEdicion(s.id)" *ngIf="isLogged()">Editar</button>
+    <button class="btn btn-primary" on-click="eliminar(s.id)" *ngIf="isLogged()">Eliminar</button>
   </div>
 
   <div class="entry" *ngIf="editando && idActual==s.id">
@@ -22,4 +22,4 @@
 </div>
 
 <p class="error" *ngIf="failCreando">Error al crear un elemento nuevo</p>
-<button class="btn btn-primary" on-click="crearNuevo()">Nuevo</button>
+<button class="btn btn-primary" on-click="crearNuevo()" *ngIf="isLogged()">Nuevo</button>
