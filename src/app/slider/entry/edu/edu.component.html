@@ -1,7 +1,7 @@
 <div *ngFor="let e of eduList">
     <div class="entry" *ngIf="!editando || idActual!=e.id">
         <div class="column">
-            <img src="" class="sqr-logo">
+            <img src="{{e.logo}}" class="sqr-logo">
         </div>
 
         <div class="column title">
@@ -24,6 +24,9 @@
             [(ngModel)]="edu.title">
             <textarea class="form-control" type="text" name="edu" id="edu"
             [(ngModel)]="edu.content" rows="4" cols="40"></textarea>
+            <p>URL de la imagen:</p>
+            <input class="form-control" type="text" name="logo" id="logo"
+            [(ngModel)]="edu.logo">
             <p class="error" *ngIf="failActualizado">Error al guardar</p>
             <button class="btn btn-primary" on-click="editar(e.id)">Confirmar</button>
             <button class="btn btn-primary" on-click="cancelarEdicion()">Cancelar</button>

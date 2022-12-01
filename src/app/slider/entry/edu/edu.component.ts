@@ -72,7 +72,7 @@ export class EduComponent implements OnInit {
     this.edu.id = nuevoid;
     this.edu.title = "Titulo";
     this.edu.content = "Descripcion";
-    this.edu.logo = 0;
+    this.edu.logo = "";
 
     this.eduService.crear(this.edu).subscribe(data=> {
       this.failCreando = false;

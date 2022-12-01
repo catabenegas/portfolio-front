@@ -72,7 +72,7 @@ export class ProyComponent implements OnInit {
     this.proy.id = nuevoid;
     this.proy.title = "Titulo";
     this.proy.content = "Descripcion";
-    this.proy.logo = 0;
+    this.proy.logo = "";
 
     this.proyService.crear(this.proy).subscribe(data=> {
       this.failCreando = false;

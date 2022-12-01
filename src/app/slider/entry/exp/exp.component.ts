@@ -72,7 +72,7 @@ export class ExpComponent implements OnInit {
     this.exp.id = nuevoid;
     this.exp.title = "Titulo";
     this.exp.content = "Descripcion";
-    this.exp.logo = 0;
+    this.exp.logo = "";
 
     this.expService.crear(this.exp).subscribe(data=> {
       this.failCreando = false;
