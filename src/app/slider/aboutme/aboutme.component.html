@@ -8,6 +8,7 @@
 <div *ngIf="editando">
     <textarea class="form-control" type="text" name="aboutme" id="aboutme"
     [(ngModel)]="aboutme.content" rows="8" cols="40"></textarea>
+    <p>{{aboutme.content.length}}/2096</p>
     <p class="error" *ngIf="failActualizado">Error al guardar</p>
     <button class="btn btn-primary" on-click="editar()">Confirmar</button>
     <button class="btn btn-primary" on-click="cancelarEdicion()">Cancelar</button>
