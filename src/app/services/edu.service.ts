@@ -9,7 +9,7 @@ const cabecera = {headers: new HttpHeaders({'Content-Type': 'application/json'})
   providedIn: 'root'
 })
 export class EduService {
-  eduURL = 'https://portfolio-back3233.herokuapp.com/api/edu/'
+  eduURL = 'https://portfolio-back-production-dab2.up.railway.app/api/edu/'
 
   constructor(private httpClient: HttpClient) { }
 

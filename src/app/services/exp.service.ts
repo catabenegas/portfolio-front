@@ -9,7 +9,7 @@ const cabecera = {headers: new HttpHeaders({'Content-Type': 'application/json'})
   providedIn: 'root'
 })
 export class ExpService {
-  expURL = 'https://portfolio-back3233.herokuapp.com/api/exp/'
+  expURL = 'https://portfolio-back-production-dab2.up.railway.app/api/exp/'
 
   constructor(private httpClient: HttpClient) { }
 

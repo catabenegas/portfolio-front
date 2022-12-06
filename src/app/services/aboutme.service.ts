@@ -9,7 +9,7 @@ const cabecera = {headers: new HttpHeaders({'Content-Type': 'application/json'})
   providedIn: 'root'
 })
 export class AboutmeService {
-  AboutMeURL = 'https://portfolio-back3233.herokuapp.com/api/aboutme/';
+  AboutMeURL = 'https://portfolio-back-production-dab2.up.railway.app/api/aboutme/';
 
   constructor(private httpClient: HttpClient) { }
 
