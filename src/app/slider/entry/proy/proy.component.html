@@ -16,7 +16,7 @@
 
     <div class="entry" *ngIf="editando && idActual==e.id">
         <div class="column">
-            <img src="" class="sqr-logo">
+            <img src="{{e.logo}}" class="sqr-logo">
         </div>
 
         <div class="column title" *ngIf="editando">
@@ -24,7 +24,7 @@
             [(ngModel)]="proy.title">
             <textarea class="form-control" type="text" name="proy" id="proy"
             [(ngModel)]="proy.content" rows="4" cols="40"></textarea>
-            <p>URL de la imagen:</p>
+            <p class="txt">URL de la imagen:</p>
             <input class="form-control" type="text" name="logo" id="logo"
             [(ngModel)]="proy.logo">
             <p class="error" *ngIf="failActualizado">Error al guardar</p>
@@ -33,5 +33,5 @@
         </div>
     </div>
 </div>
-<p class="error" *ngIf="failCreando">Error al crear un elemento nuevo</p>
-<button class="btn btn-primary" on-click="crearNuevo()" *ngIf="isLogged()">Nuevo</button>
+<p class="error txt" *ngIf="failCreando">Error al crear un elemento nuevo</p>
+<button class="btn btn-primary new-button" on-click="crearNuevo()" *ngIf="isLogged()">Nuevo</button>

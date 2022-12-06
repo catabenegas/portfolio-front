@@ -18,6 +18,11 @@
     width: auto;
 }
 
+.col-9
+{
+    width: 81%;
+}
+
 .social:nth-child(4)
 {
     margin-left: auto;

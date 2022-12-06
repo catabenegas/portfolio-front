@@ -9,17 +9,17 @@
   </div>
 
   <div class="entry" *ngIf="editando && idActual==s.id">
-    <p>Etiqueta:</p>
+    <p class="txt">Etiqueta:</p>
     <input class="form-control" type="text" name="tag" id="tag"
       [(ngModel)]="skill.tag">
-    <p>Porcentaje:</p>
+    <p class="txt">Porcentaje (en decimal):</p>
     <input class="form-control" type="number" name="percentage" id="percentage"
       [(ngModel)]="skill.percentage">
     <p class="error" *ngIf="failActualizado">Error al guardar</p>
-    <button class="btn btn-primary" on-click="editar(s.id)">Confirmar</button>
-    <button class="btn btn-primary" on-click="cancelarEdicion()">Cancelar</button>
+    <button class="btn btn-primary edit-buttons" on-click="editar(s.id)">Confirmar</button>
+    <button class="btn btn-primary edit-buttons" on-click="cancelarEdicion()">Cancelar</button>
   </div>
 </div>
 
-<p class="error" *ngIf="failCreando">Error al crear un elemento nuevo</p>
-<button class="btn btn-primary" on-click="crearNuevo()" *ngIf="isLogged()">Nuevo</button>
+<p class="error txt" *ngIf="failCreando">Error al crear un elemento nuevo</p>
+<button class="btn btn-primary new-button" on-click="crearNuevo()" *ngIf="isLogged()">Nuevo</button>
