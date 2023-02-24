@@ -7,7 +7,7 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 })
 
 export class AuthService {
-  api = 'https://portfolio-back-production-dab2.up.railway.app/api';
+  api = 'https://portfolio-backend-yea1.onrender.com/api';
   token = '';
 
   constructor(private http: HttpClient, private tokenService: TokenService) { }

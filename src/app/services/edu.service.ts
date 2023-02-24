@@ -9,7 +9,7 @@ const cabecera = {headers: new HttpHeaders({'Content-Type': 'application/json'})
   providedIn: 'root'
 })
 export class EduService {
-  eduURL = 'https://portfolio-back-production-dab2.up.railway.app/api/edu/'
+  eduURL = 'https://portfolio-backend-yea1.onrender.com/api/edu/'
 
   constructor(private httpClient: HttpClient) { }
 
